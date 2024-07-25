@@ -14,6 +14,10 @@
 
 <div th:if="${username}">
     <h2>Repositories for <span th:text="${username}"></span>:</h2>
+    <!-- Link to JSON -->
+    <p>
+        <a th:href="${jsonUrl}">View JSON</a>
+    </p>
     <ul>
         <li th:each="repo : ${repos}">
             <h3>Repository: <span th:text="${repo.name}"></span></h3>
