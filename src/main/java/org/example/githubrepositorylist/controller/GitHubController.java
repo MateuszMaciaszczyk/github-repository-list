@@ -26,7 +26,7 @@ public class GitHubController {
         List<RepositoryDetails> repos = gitHubService.getRepositories(username);
         model.addAttribute("repos", repos);
         model.addAttribute("username", username);
-        model.addAttribute("jsonUrl", "/repos/json?username=" + username); // Dodajemy URL do JSON
+        model.addAttribute("jsonUrl", "/repos/json?username=" + username);
         return "index";
     }
 
