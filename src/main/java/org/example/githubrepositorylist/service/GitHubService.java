@@ -49,7 +49,7 @@ public class GitHubService {
         return repositories;
     }
 
-    private List<BranchDetails> getBranches(String ownerLogin, String repoName) {
+    public List<BranchDetails> getBranches(String ownerLogin, String repoName) {
         String url = String.format(GITHUB_BRANCHES_URL, ownerLogin, repoName);
         List<BranchDetails> branches = new ArrayList<>();
 
