@@ -29,7 +29,7 @@ A Spring Boot application that fetches and displays GitHub repositories of a giv
 1. **Clone the Repository**
 
    ```bash
-   git clone https://github.com/yourusername/github-repository-list.git
+   git clone https://github.com/MateuszMaciaszczyk/github-repository-list.git
    ```
 
 2. **Navigate to the Project Directory**
