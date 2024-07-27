@@ -46,7 +46,7 @@ class GitHubServiceTest {
 
         assertNotNull(repositories);
         assertFalse(repositories.isEmpty());
-        assertEquals(9, repositories.size());
+        assertEquals(10, repositories.size());
         assertEquals("CRUD-Application", repositories.get(0).name());
         assertEquals("MateuszMaciaszczyk", repositories.get(0).ownerLogin());
         assertEquals(2, repositories.get(0).branches().size());
