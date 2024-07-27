@@ -30,25 +30,25 @@ A Spring Boot application that fetches and displays GitHub repositories of a giv
 
    ```bash
    git clone https://github.com/yourusername/github-repository-list.git
-  ```
+   ```
 
 2. **Navigate to the Project Directory**
 
    ```bash
    cd github-repository-list
-  ```
+   ```
 
 3. **Build the Project**
 
    ```bash
    mvn clean install
-  ```
+   ```
 
 4. **Run the Application**
 
    ```bash
    mvn spring-boot:run
-  ```
+   ```
 
 The application will start on http://localhost:8080.
 
