@@ -2,33 +2,41 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>GitHub Repositories</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="/style.css">
 </head>
 <body>
-<h1>GitHub Repositories</h1>
-<form action="/repos" method="get">
-    <label for="username">GitHub Username:</label>
-    <input type="text" id="username" name="username" required>
-    <button type="submit">Get Repositories</button>
-</form>
+<div class="container">
+    <h1 class="my-4">GitHub Repositories</h1>
+    <form action="/repos" method="get" class="form-inline mb-4">
+        <div class="form-group mx-sm-3 mb-2">
+            <label for="username" class="sr-only">GitHub Username</label>
+            <input type="text" class="form-control" id="username" name="username" placeholder="GitHub Username" required>
+        </div>
+        <button type="submit" class="btn btn-primary mb-2">Get Repositories</button>
+    </form>
 
-<div th:if="${username}">
-    <h2>Repositories for <span th:text="${username}"></span>:</h2>
-    <!-- Link to JSON -->
-    <p>
-        <a th:href="${jsonUrl}">View JSON</a>
-    </p>
-    <ul>
-        <li th:each="repo : ${repos}">
-            <h3>Repository: <span th:text="${repo.name}"></span></h3>
-            <p>Owner: <span th:text="${repo.ownerLogin}"></span></p>
-            <ul>
-                <li th:each="branch : ${repo.branches}">
-                    Branch: <span th:text="${branch.name}"></span> - Latest Commit SHA: <span th:text="${branch.commitSha}"></span>
-                </li>
-            </ul>
-        </li>
-    </ul>
+    <div th:if="${username}">
+        <h2>Repositories for <span th:text="${username}"></span>:</h2>
+        <!-- Link to JSON -->
+        <p>
+            <a th:href="${jsonUrl}" class="btn btn-info" target="_blank">View JSON</a>
+        </p>
+        <div class="list-group">
+            <div th:each="repo : ${repos}" class="list-group-item">
+                <h3 class="h5">Repository: <span th:text="${repo.name}"></span></h3>
+                <p>Owner: <span th:text="${repo.ownerLogin}"></span></p>
+                <ul class="list-unstyled">
+                    <li th:each="branch : ${repo.branches}">
+                        Branch: <span th:text="${branch.name}"></span> - Latest Commit SHA: <span th:text="${branch.commitSha}"></span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
 </div>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </body>
 </html>
